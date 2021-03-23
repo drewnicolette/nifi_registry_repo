@@ -1,0 +1,171 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "8e2b02c0-370c-3805-aaf5-b410b77b7897",
+            "id" : "aba99584-3f9a-3070-9ab6-d0f9da62e3e2",
+            "name" : "From MiNiFI",
+            "type" : "REMOTE_INPUT_PORT"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "f6eedb38-ae69-3389-9262-e4eaacd4d9db",
+          "identifier" : "3ad25db1-27da-3021-8903-46c4f0e8b4c0",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "f6eedb38-ae69-3389-9262-e4eaacd4d9db",
+            "id" : "7ec6788b-df90-3f4f-96e0-068238d9c3f2",
+            "name" : "GenerateFlowFile",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "funnels" : [ ],
+        "identifier" : "f6eedb38-ae69-3389-9262-e4eaacd4d9db",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "build5",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : -8192.0,
+          "y" : -976.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.12.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "f6eedb38-ae69-3389-9262-e4eaacd4d9db",
+          "identifier" : "7ec6788b-df90-3f4f-96e0-068238d9c3f2",
+          "name" : "GenerateFlowFile",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : -8192.0,
+            "y" : -960.0
+          },
+          "properties" : {
+            "character-set" : "UTF-8",
+            "File Size" : "0B",
+            "generate-ff-custom-text" : "hello",
+            "Batch Size" : "1",
+            "Unique FlowFiles" : "false",
+            "Data Format" : "Text"
+          },
+          "propertyDescriptors" : {
+            "character-set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "character-set",
+              "sensitive" : false
+            },
+            "File Size" : {
+              "displayName" : "File Size",
+              "identifiesControllerService" : false,
+              "name" : "File Size",
+              "sensitive" : false
+            },
+            "mime-type" : {
+              "displayName" : "Mime Type",
+              "identifiesControllerService" : false,
+              "name" : "mime-type",
+              "sensitive" : false
+            },
+            "generate-ff-custom-text" : {
+              "displayName" : "Custom Text",
+              "identifiesControllerService" : false,
+              "name" : "generate-ff-custom-text",
+              "sensitive" : false
+            },
+            "Batch Size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Batch Size",
+              "sensitive" : false
+            },
+            "Unique FlowFiles" : {
+              "displayName" : "Unique FlowFiles",
+              "identifiesControllerService" : false,
+              "name" : "Unique FlowFiles",
+              "sensitive" : false
+            },
+            "Data Format" : {
+              "displayName" : "Data Format",
+              "identifiesControllerService" : false,
+              "name" : "Data Format",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "10 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ {
+          "comments" : "",
+          "communicationsTimeout" : "30 sec",
+          "componentType" : "REMOTE_PROCESS_GROUP",
+          "groupIdentifier" : "f6eedb38-ae69-3389-9262-e4eaacd4d9db",
+          "identifier" : "8e2b02c0-370c-3805-aaf5-b410b77b7897",
+          "inputPorts" : [ {
+            "batchSize" : { },
+            "comments" : "",
+            "componentType" : "REMOTE_INPUT_PORT",
+            "concurrentlySchedulableTaskCount" : 1,
+            "groupIdentifier" : "8e2b02c0-370c-3805-aaf5-b410b77b7897",
+            "identifier" : "aba99584-3f9a-3070-9ab6-d0f9da62e3e2",
+            "name" : "From MiNiFI",
+            "remoteGroupId" : "8e2b02c0-370c-3805-aaf5-b410b77b7897",
+            "targetId" : "bbc6e4bd-0177-1000-42db-b8733ff8d980",
+            "useCompression" : false
+          } ],
+          "name" : "NiFi Flow",
+          "outputPorts" : [ ],
+          "position" : {
+            "x" : -7608.0,
+            "y" : -976.0
+          },
+          "proxyHost" : "",
+          "proxyUser" : "",
+          "targetUri" : "http://localhost:8080/nifi",
+          "targetUris" : "http://localhost:8080/nifi",
+          "transportProtocol" : "RAW",
+          "yieldDuration" : "10 sec"
+        } ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
